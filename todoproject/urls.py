@@ -19,7 +19,8 @@ from todoapp.views import todoappView, addTodoView, deleteTodoView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', todoappView),
     path('todoapp/', todoappView),
-     path('addTodoItem/',addTodoView),
-     path('deleteTodoItem/<int:i>/', deleteTodoView),
+    path('addTodoItem/',addTodoView),
+    path('deleteTodoItem/<int:id>/', deleteTodoView),
 ]
