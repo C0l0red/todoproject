@@ -15,12 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from todoapp.views import todoappView, addTodoView, deleteTodoView
+from todoapp.views import todoappView, addTodoView, deleteTodoView, addCategory
+from django.http import HttpResponseRedirect
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', todoappView),
+    path('todoapp/<str:category_name>/', todoappView),
     path('todoapp/', todoappView),
-    path('addTodoItem/',addTodoView),
-    path('deleteTodoItem/<int:id>/', deleteTodoView),
+    path('addTodoItem/<str:next>/',addTodoView),
+    path('deleteTodoItem/<int:id>/<str:next>/', deleteTodoView),
+    path("addCategory/", addCategory)
 ]
