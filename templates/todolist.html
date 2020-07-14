@@ -16,7 +16,8 @@
         }
     </style>
     {% load extras %}
-    <link rel="shortcut icon" href="http://red-flask-blog.herokuapp.com/static/images/icons8-red-onedrive-480.png" type="image/x-icon">
+    {% load static %}
+    <link rel="shortcut icon" href="{% static 'icons8-red-onedrive-480.png' %}" type="image/x-icon"> 
 </head>
 <body>
     <div class="container">
